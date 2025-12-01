@@ -1,0 +1,14 @@
+version: 3
+automerge: false
+parallel_plan: true
+parallel_apply: false
+
+projects:
+  - name: test-dns
+    dir: dns/test_zone/test_domain_com/dns
+    workspace: default
+    terraform_version: v1.14.0
+    autoplan:
+      when_modified: ["*.tf", "*.tfvars", "terragrunt.hcl"]
+      enabled: true
+    apply_requirements: [approved]
