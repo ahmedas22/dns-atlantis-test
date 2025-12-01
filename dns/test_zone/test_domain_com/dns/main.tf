@@ -42,6 +42,11 @@ locals {
       proxied = true
       comment = "API server"
     }
+    "staging" = {
+      value   = "192.168.1.20"
+      proxied = false
+      comment = "Staging server - added via Atlantis"
+    }
   }
 
   # CNAME Records
